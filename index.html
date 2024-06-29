@@ -22,10 +22,24 @@
 <body>
     <img src="https://scontent.fmnl4-4.fna.fbcdn.net/v/t1.15752-9/448235113_1127040545193497_1788869600749561487_n.png?_nc_cat=100&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeHD_2lEEDruBBcg7K7EfO8JIf7OEDbu-9oh_s4QNu772qvUIIVG5T3uGqwq8PC-R48MuZr9xfQkLF7NtRutUmtH&_nc_ohc=WE63XVVeGVEQ7kNvgEzO0fi&_nc_ht=scontent.fmnl4-4.fna&oh=03_Q7cD1QF1YZspwOEfDTuGflO7vs7k_rAqCI51DvUtd56ru-3wVQ&oe=66A76EA8" alt="Men Kissing Meme">
 
-<!-- Audio player for background music -->
-    <audio controls autoplay loop>
+    <!-- Audio player for background music -->
+    <audio id="backgroundMusic" controls loop>
         <source src="Bad Bunny - Neverita (Cooking FoodKissing Sound).mp3" type="audio/mpeg">
         
     </audio>
+
+    <!-- JavaScript to autoplay music on user interaction -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            var audio = document.getElementById('backgroundMusic');
+            audio.play(); // Autoplay audio when page is loaded
+            // Add event listener to play audio on user interaction
+            document.addEventListener('click', function() {
+                if (audio.paused) {
+                    audio.play();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
